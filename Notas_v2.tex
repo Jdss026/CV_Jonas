@@ -1,0 +1,1330 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.0cm,bmargin=2.0cm,rmargin=2cm,lmargin=2cm}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{color}
+
+\begin{document}
+
+\begin{center}
+
+{\bf{ \Huge Nonequilibrium dynamics in a local chiral quark model }} \\[0.8cm]
+
+% Author and supervisor
+\begin{minipage}{0.8\textwidth}
+\begin{centering}
+\large
+{ Carlisson Miller } \\
+
+\end{centering}
+\end{minipage}
+
+\end{center}
+
+\section{Effective action}
+
+We use the linear $\sigma$ model with constituent quarks where the dynamics of the quarks is reduced to a
+fluid dynamic. This description is named as chiral fluid dynamics. In general terms, the relativistic fluid dynamics is based in the energy conservation and particle numbers. The Lagrangian with magnetic field reads
+%
+\begin{equation}
+\mathcal{L} = \bar{\psi}[i\gamma^{\mu}\partial_{\mu} - q_f \gamma_{\mu} A^{\mu} - g(\sigma + i\gamma_5 \vec\tau \cdot \vec\pi ) ] \psi
++\frac{1}{2}\partial_{\mu}\sigma\partial^{\mu}\sigma +\frac{1}{2}\partial_{\mu}\vec\pi\cdot\partial^{\mu}\vec\pi
+- U (\sigma,\vec\pi),
+\end{equation}
+%
+where $q_f$ is the electric charge of the quark with $f$ flavor, $g$ is the coupling between quarks $\psi=(u,d)$ and the chiral fields $\sigma$ and $\vec\pi$. We have omitted the gauge dynamic term. The interaction potential between chiral fields is
+%
+\begin{equation}
+U (\sigma,\vec\pi) = \frac{\lambda^2}{4} (\sigma^2 + \vec\pi^2 -v^2)^2 - h_{q}\sigma - U_{0},
+\end{equation}
+%
+if $h_q$ vanishes the Lagrangian is invariant under $SU(2)_L\times SU(2)_R$. Such model is a bosonized version of the local NJL, once that the coupling $g$ is constant. As we are only interested in the behavior of the order parameters, we neglect fluctuations of the pionic degrees of freedom and keep their values fixed at the vanishing expectation value $\vec{\pi}=\langle \vec\pi \rangle = 0$ for all times.
+
+We adopted a static magnetic field pointed to z-direction. To reproduce this, we choose the vector field as $A_{\mu} = \delta_{\mu 2} x_1 B$.
+
+The effective potential is evaluate similarly to the case without magnetic field, whose expression, at mean field approximation, is
+%
+\begin{equation}
+V_{eff} = U (\sigma,\vec\pi) + \frac{i}{2} \int \frac{d^4 p}{(2\pi)^4}
+\ln \left[ - p^2 + m^2 \right] .
+\end{equation}
+%
+
+where $m=g \sigma$. In order to include the magnet field in the quark matter at finite temperature and chemical potential we just make the following substitutions~\cite{Fraga:2008qn,Menezes:2008qt}
+%
+\begin{equation}
+p_0 \rightarrow i ( \omega_{\nu} - i\mu )
+\end{equation}
+%
+%
+\begin{equation}
+p^2 \rightarrow p_z^2 + ( 2 n + 1 - s ) \vert q_f B \vert , \quad
+{\rm{com}} \quad s = \pm 1 , n=0, 1, 2, ...
+\end{equation}
+%
+%
+\begin{equation}
+\int \frac{d^4 p}{(2\pi)^4} \rightarrow
+i T \frac{\vert q_f B \vert}{2\pi} \sum_{\nu = -\infty}^{\infty}
+\sum_{n=0}^{\infty} \int \frac{dp_z}{2\pi}
+\end{equation}
+%
+where $\omega_{\nu} = ( 2 \nu + 1 )\pi T$ represents the Matsubara frequencies and $n$ the Landau levels. Note that, the temperature and magnetic field effects led to a dimensional reduction reflected in the transformation of the 4d momentum integral into a 1d momentum integral.
+
+This way, our effective potential is now the thermodynamical potential. Summing over
+the Matsubara frequencies, we obtain
+%
+\begin{equation}
+\Omega(T) = U (\sigma,\vec\pi) + \Omega_{\bar{q} q}
+\end{equation}
+%
+where
+%
+\begin{equation}
+\Omega_{\bar{q} q} = - \frac{N_c}{2\pi} \sum_{s,n,f} (\vert q_f B\vert)
+\int \frac{d p_z}{2\pi} \left( E_{p_z, n, s}(B)
++ 2 T \ln \left( 1 + e^{- E_{p_z, n, s}(B) / T } \right)
+\right)
+\end{equation}
+%
+where we have setting $\mu=0$. In the above equation,
+$E_{p_z, n, s}(B) = \sqrt{p_z^2 + ( 2 n + 1 - s ) \vert q_f B \vert + m^2 }$ and
+the sum over $s, n, f $ refer to spin, Landau levels and quark flavors. We can also
+use the degenerescence of the Landau levels to rewrite the energy as
+$E_{p_z, k}(B) = \sqrt{p_z^2 + 2 k \vert q_f B \vert + m^2 }$, replacing $n$ by $k$ and
+summing $s = \pm 1$. The lowest Landau level $n=0$ is the only that is not degenerate. The
+rest of the levels are degenerated doubly. So, the function $\Omega_{\bar{q} q}$ becomes
+%
+\begin{equation}
+\Omega_{\bar{q} q} = - \frac{N_c}{2\pi} \sum_{f=u, d} \sum_{k=0}^{\infty} \alpha_k
+(\vert q_f B\vert) \int \frac{d p_z}{2\pi} \left( E_{p_z, k}(B)
++ 2 T \ln \left( 1 + e^{- E_{p_z, k}(B) / T } \right)
+\right)
+\end{equation}
+%
+where degeneracy factor $\alpha_k = 2-\delta_{0k}$. Following the Ref.~\cite{Menezes:2008qt}, we separate the divergent vacuum contribution
+from the finite magnetic field contribution so that the regularization method is
+magnetic field independent. This analogy is possible because the above term, coming
+from quarks, has the same mathematical form in NJL model. All details of this calculation
+can be found in the appendix~\cite{Menezes:2008qt}. This way, $\Omega_{\bar{q} q}$ is
+rewritten as
+%
+\begin{equation}
+\Omega_{\bar{q} q}(\sigma, T, B) = \Omega_{vac}(\sigma) + \Omega_{mag}(\sigma, B)
++ \Omega_{med}(\sigma, T, B)
+\end{equation}
+%
+where the vacuum contribution is
+%
+\begin{equation}
+\Omega_{vac}(\sigma) = -2 N_c N_f \int \frac{d^3 p}{(2\pi)^3} E_p
+= - \frac{N_c N_f}{\pi^2} \int_{0}^{\Lambda} dp p^2 E_p ,
+\label{Omega_vac}
+\end{equation}
+%
+with $E_p =\sqrt{p^2 + m^2}$, the magnetic field term is
+%
+\begin{eqnarray}
+\Omega_{mag}(\sigma, B) = -N_c \sum_{f=u}^{d} \frac{(\vert q_f\vert B)^2}{2\pi^2} \Big[ \zeta'(-1, x_f )
++ \frac{x_{f}^{2}}{4} - \frac{1}{2} \left(x_{f}^{2} -x_{f} \right) \ln(x_f) \Big] ,
+\label{Omega_mag}
+\end{eqnarray}
+%
+where we have used $x_f = m^2 /(2\vert q_f\vert B)$ and $\zeta'(-1, x_f ) = d\zeta(z, x_f )/dz \vert_{z=-1}$ being the zeta Riemann-Hurwitz. The medium contribution takes the form
+%
+\begin{eqnarray}
+\Omega_{med}(\sigma, T, B) = -\frac{N_c}{2\pi} 2T \sum_{f=u}^{d} \sum_{k=0}^{\infty} \alpha_k (\vert q_f\vert B) \int_{0}^{\infty} \frac{dp_z}{\pi} \ln \left[ 1 + \exp{\left(-\frac{E_k}{T}\right)} \right]
+\label{Omega_med}
+\end{eqnarray}
+%
+Therefore, the full thermodynamical potential $\Omega$ becomes
+%
+\begin{equation}
+\Omega(\sigma, T, B) = U (\sigma) + \Omega_{vac}(\sigma)
++ \Omega_{mag}(\sigma, B) + \Omega_{med}(\sigma, T, B)
+\end{equation}
+%
+
+%
+The explicit dynamics of the chiral fields can be achieved by the ordinary classical equations of motion from the
+effective Lagrangian with the effective potential given above. As a result, we obtain
+%
+\begin{equation}
+\partial_{\mu}\partial^{\mu} \sigma
++ \frac{\partial \Omega(\sigma, T, B)}{\partial\sigma}  = 0
+\end{equation}
+%
+The approach neglects dissipation and stochastic processes have been neglected. The formalism capable of including such properties is the non equilibrium 2PI formalism which also take into account the back reaction on the heat bath.
+
+We can easily find the stationary configuration, $\sigma_{eq}$, which is obtained  as follows
+%
+\begin{equation}
+\frac{U(\sigma)}{\partial\sigma}
++ \frac{\partial \Omega_{vac}(\sigma)}{\partial\sigma}
++ \frac{\partial \Omega_{mag}(\sigma, B)}{\partial\sigma}
++ \frac{\partial \Omega_{med}(\sigma, T, B)}{\partial\sigma} = 0
+\end{equation}
+%
+where
+%
+\begin{equation}
+\frac{U(\sigma)}{\partial\sigma} = \lambda^2 \sigma
+\left( \sigma^2 - v^2 \right) - h_q
+\end{equation}
+%
+
+
+\section{2PI Effective action formalism}
+
+In order to study the nonequilibrium dynamics of the system, we employ the known 2PI effective action formalism, which is derived from a functional integral representation of the quantum many-body system. From this action, we can obtain self-consistent quantum equations for the mean field as well as the two-point correlation functions~\cite{Berges:2001fi}. Such formalism is able to take into account dissipation and noise terms, where the propagator is also treated as a dynamical variable. In the one loop approximation, the 2PI action is a functional of the mean field and the propagator and, hence, takes the form
+%
+\begin{equation}
+\Gamma [\sigma, S] = S_{cl}[\sigma] -i \mathrm{Tr}\ln S^{-1} - i\mathrm{Tr}S_{0}^{-1}S + \Gamma_{2} [\sigma,S],
+\label{2PIaction}
+\end{equation}
+%
+where the trace is defined as $\mathrm{Tr} = \int_\mathcal{C} dx^4 \sum_{fl} \sum_{Dirac}$ and $\Gamma_{2} [\sigma,S]$ captures the rest which we have not included in the one loop approximation.~ The contour $\mathcal{C}$ is a time Keldysh-Schwinger contour. The $S_{0}^{ab}$ and $S^{ab}$ are the free and full quark propagators where the $a$ and $b$ represent indices defined in the Keldysh-Schwinger contour. Other indices are omitted for simplicity.~% is given by the sum of all two-particle irreducible diagrams (i.e. diagrams which cannot be separated by the removal of two lines).
+
+The equations of motion for the $\sigma(x)$ and $S(x,y)$ in the absence of sources are obtained from:
+%
+\begin{equation}
+\frac{\delta\Gamma[\sigma,S]}{\delta\sigma^a} = 0, \quad
+\frac{\delta\Gamma[\sigma,S]}{\delta S^{ab}} = 0 .
+\label{EoM}
+\end{equation}
+%
+This way, using the 2PI action we obtain
+%
+\begin{equation}
+\frac{\delta\Gamma[\sigma,S]}{\delta S} = i \mathrm{Tr}S^{-1} - i \mathrm{Tr}S_{0}^{-1} + \frac{\delta\Gamma_{2} [\sigma,S]}{\delta S } = 0.
+\end{equation}
+%
+Now, using the self-energy of the quarks
+%
+\begin{equation}
+\Sigma^{ab} (x,y;S) = S^{ab}_{0}(x,y)^{-1} - S^{ab}(x,y)^{-1},
+\label{selfenergy1}
+\end{equation}
+%which also can written explicitly as
+%\begin{equation}
+%(i\gamma^{\mu}\partial_{\mu} - m_f)S^{ab} (x,y) - i\int_{\mathcal{C}} d^4 z \Sigma^{ac} (x,z) S^{cb} (z,y)
+%= i \delta_{\mathcal{C}}^{ab} (x-y),
+%\end{equation}
+%
+we obtain the following the equation of motion for the quark propagator $S^{ab}$
+%
+\begin{equation}
+-i \Sigma^{ab} (x,y) = \frac{\delta\Gamma_{2} [\sigma,S]}{\delta S^{ab} (x,y)}.
+\label{selfenergy2}
+\end{equation}
+%
+%we can rewrite the effective action as
+%
+%\begin{equation}
+%\Gamma [\sigma, S] = S_{cl}[\sigma^{a}] - i \mathrm{Tr} \ln S^{-1} - i\mathrm{Tr}{\Sigma} S + \Gamma_{2} %[\sigma,S],
+%\label{gammaaction}
+%\end{equation}
+%
+%Varying only explicit dependencies in $\sigma$, we find the equation of motion for the mean field
+%
+%\begin{equation}
+%- \frac{\delta S_{cl} [\sigma]}{\delta\sigma^{a}} = \frac{\delta\Gamma_{2} [\sigma,S]}{\delta \sigma^{a}}.
+%\end{equation}
+%
+%The expressions for these propagators are given in~[Nahrgang:2011mg].
+To move on, we need some approximation for the $\Gamma_{2}[\sigma,S]$. The Ref.~\cite{Nahrgang:2011mg} uses a particular approximation for this contribution, such that, the quark self energy reads
+%
+\begin{equation}
+\Sigma^{ab} (x,y) = -i g \delta^{ab}_{\mathcal{C}}(x-y) \sigma^{b}(x).
+\end{equation}
+%
+This way, with such approximation the third term in~(\ref{2PIaction}) cancels the forth term, and the 2PI effective action simplifies
+%
+\begin{equation}
+\Gamma [\sigma, S] = S_{cl}[\sigma] + i \mathrm{Tr}\ln S .
+\label{2PIaction2}
+\end{equation}
+%
+From now on, our goal is manipulate the 2PI action and, in order to do this, we use Eq.~(\ref{selfenergy1}) and rewrite the Schwinger-Dyson equation for quark propagator as
+%
+ \begin{equation}
+( i\gamma^{\mu}\partial_{\mu} - m_f)S^{ab} (x,y) - g \sigma^{a} (x) S^{ab} (x,y)
+=
+ i \delta_{\mathcal{C}}^{ab} (x-y).
+\end{equation}
+%
+%This way, the equation for $\sigma$ field is
+%\begin{equation}
+%- \frac{\delta S_{cl} [\sigma]}{\delta\sigma^{a}} = g \mathrm{tr} S^{aa}(x,x)
+%\end{equation}
+Note that, the quark propagator is affected by mean field $\sigma$. The space-time dependence of $\sigma^a$ makes the solution of the problem hard to find. We decompose this field into one component $\sigma^{a}_{0}$ that varies slowly and a small fluctuation part $\delta \sigma^a$
+%
+\begin{equation}
+\sigma^a (x) = \sigma^{a}_{0} + \delta\sigma^{a}(x).
+\label{sigmadecomp}
+\end{equation}
+%
+We also expand the full propagator around the thermal-magnetic propagator, as follows
+%
+\begin{equation}
+S^{ab}(x,y) = S_{th}^{ab}(x,y) + \delta S^{ab}(x,y) + \delta^2 S^{ab}(x,y)
+\label{S_expansion}
+\end{equation}
+%
+Plugging the quark propagator into the effective action and expanding in orders of fluctuation, we find
+%
+\begin{equation}
+\Gamma [\sigma, S] = S_{cl}[\sigma +\delta\sigma] + i \mathrm{Tr}\ln S_{th} +
+i \mathrm{Tr}\ln \left( 1 + S_{th}^{-1} \left(\delta S + \delta^2 S \right) \right) .
+\label{2PIaction3}
+\end{equation}
+%
+Expanding the logarithm and using the expressions for the fluctuations of the propagators, see~\cite{Nahrgang:2011mg}, we
+can write
+%
+\begin{equation}
+\Gamma [\sigma, S] = S_{cl}[\sigma +\delta\sigma] + i \mathrm{Tr}\ln S_{th} + g \mathrm{Tr} \left(\delta\sigma S_{th}\right)
+- i \frac{g^2}{2} \mathrm{Tr} \left( \delta\sigma S_{th} \delta\sigma S_{th} \right) .
+\label{2PIaction4}
+\end{equation}
+%
+Now, we are ready to rewrite the action using the closed real time contour. For this task, we write explicitly each above term in terms of indices in the contour, $a$ and $b$. Such indices follows the convention: $+$ when the time coordinate finds in $\mathcal{C}_{+}$ and $-$ when the time coordinate finds in $\mathcal{C}_{-}$, see~\cite{Fu:2010ej}. So, the forth term in~(\ref{2PIaction4}) is written as
+%
+\begin{eqnarray}
+ i \frac{g^2}{2} \mathrm{Tr} \Big(\delta\sigma S_{th} \delta\sigma S_{th} \Big) &=& i \frac{g^2}{2}
+\int d^4 x d^4 y \mathrm{tr} \Big(\delta\sigma^{a}(x) S_{th}^{ab} (x,y) \delta\sigma^{b}(y) S_{th}^{ba} (y,x) \Big)\nonumber \\
+&=& i \frac{g^2}{2}\int d^4 x d^4 y \mathrm{tr} \Big(\delta\sigma^{+}(x) S_{th}^{++} (x,y) \delta\sigma^{+}(y) S_{th}^{++} (y,x)\nonumber \\
+&+&\delta\sigma^{-}(x) S_{th}^{--}(x,y) \delta\sigma^{-}(y) S_{th}^{--} (y,x)\nonumber \\
+&-&\delta\sigma^{+}(x) S_{th}^{+-}(x,y) \delta\sigma^{-}(y) S_{th}^{-+} (y,x)\nonumber \\
+&-&\delta\sigma^{-}(x) S_{th}^{-+}(x,y) \delta\sigma^{+}(y) S_{th}^{+-} (y,x) \Big)
+\label{Eq4}
+\end{eqnarray}
+%
+Following~\cite{Nahrgang:2011mg}, we use the center and relative variables, which are resulted of the combination of the fields on the two time branches of the Keldysh contour:
+%
+\begin{equation}
+\delta\bar{\sigma} = \frac{1}{2} (\delta\sigma^{+} + \delta\sigma^{-}), \quad
+\Delta\sigma = \delta\sigma^{+} - \delta\sigma^{-} .
+\label{centralcoord}
+\end{equation}
+%
+This way, expanding~(\ref{Eq4}) we find at first and second order in $\Delta\delta\sigma$
+%
+\begin{eqnarray}
+i \frac{g^2}{2} \mathrm{Tr} \Big(\delta\sigma S_{th} \delta\sigma S_{th} \Big) &=& i \frac{g^2}{2}
+\int d^4 x d^4 y \mathrm{tr} \Big[ \Delta\sigma(x)
+\Big(S_{th}^{++} (x,y)  S_{th}^{++} (y,x) - S_{th}^{--}(x,y) S_{th}^{--} (y,x) \nonumber \\
+&+& S_{th}^{-+}(x,y) S_{th}^{+-} (y,x) - S_{th}^{+-}(x,y) S_{th}^{-+} (y,x) \Big) \delta\bar\sigma(y) \Big] \nonumber \\
+&+& i \frac{g^2}{8}
+\int d^4 x d^4 y \mathrm{tr} \Big[ \Delta\sigma(x)
+\Big(S_{th}^{++} (x,y) S_{th}^{++} (y,x)
++ S_{th}^{--}(x,y) S_{th}^{--} (y,x) \nonumber \\
+&+& S_{th}^{+-}(x,y) S_{th}^{-+} (y,x) + S_{th}^{-+}(x,y) S_{th}^{+-} (y,x) \Big) \Delta\delta\sigma(y) \Big]
+\label{Eq5}
+\end{eqnarray}
+%
+Using the following property for the real time contour propagators, see~\cite{Nahrgang:2011mg}
+%
+\begin{eqnarray}
+S_{th}^{++}(x,y) = S_{th}^{>}(x,y)\theta(x^0 - y^0) + S_{th}^{<}(x,y)\theta(y^0 - x^0) \\
+S_{th}^{--}(x,y) = S_{th}^{<}(x,y)\theta(x^0 - y^0) + S_{th}^{>}(x,y)\theta(y^0 - x^0) ,
+\label{Eq6}
+\end{eqnarray}
+%
+where $S^{<}=S^{+-}$ and $S^{>}=S^{-+}$, we have
+%
+\begin{eqnarray}
+i \frac{g^2}{2} \mathrm{Tr} \Big(\delta\sigma S_{th} \delta\sigma S_{th} \Big) &=& - i g^2
+\int d^4 x d^4 y \theta(x^0 -y^0) \Delta\sigma(x) \mathrm{tr}
+\Big(S_{th}^{<}(x,y) S_{th}^{>} (y,x) - S_{th}^{>} (x,y) S_{th}^{<} (y,x) \Big) \delta\bar\sigma(y) \nonumber \\
+&+& i \frac{g^2}{4} \int d^4 x d^4 y \Delta\sigma(x) \mathrm{tr}
+\Big( S_{th}^{<} (x,y) S_{th}^{>} (y,x) + S_{th}^{>}(x,y) S_{th}^{<} (y,x) \Big) \Delta \sigma(y)
+\label{Eq7}
+\end{eqnarray}
+%
+Similarly, we apply the same procedure in the third term in~(\ref{2PIaction3}) and the effective action becomes
+%
+\begin{eqnarray}
+\Gamma [\sigma, S] &=& S_{cl}[\sigma]
++ \frac{g}{2} \int d^4 x \mathrm{tr} \left( S_{th}^{++}(x,x) + S_{th}^{--}(x,x)\right) \Delta\sigma(x) \nonumber \\
+&+& i g^2 \int d^4 x d^4 y \theta(x^0 -y^0) \Delta\sigma(x) \mathrm{tr}
+\Big(S_{th}^{<}(x,y) S_{th}^{>} (y,x) - S_{th}^{>} (x,y) S_{th}^{<} (y,x) \Big) \delta\bar\sigma(y)  \nonumber \\
+&-& i \frac{g^2}{4} \int d^4 x d^4 y \Delta\sigma(x) \mathrm{tr}
+\Big( S_{th}^{<} (x,y) S_{th}^{>} (y,x) + S_{th}^{>}(x,y) S_{th}^{<} (y,x) \Big) \Delta \sigma(y)  .
+\label{Eq8}
+\end{eqnarray}
+%
+It is worth to remember that, from the influence functional approach~\cite{Nahrgang:2011mg}, we can identify the damping and noise kernels in the above expression
+%
+\begin{eqnarray}
+\Gamma [\sigma, S] &=& S_{cl}[\sigma]
++ \frac{g}{2} \int d^4 x \mathrm{tr} \left( S_{th}^{++}(x,x) + S_{th}^{--}(x,x)\right) \Delta\sigma(x) +
+ \int d^4 x D(x) \Delta\delta\sigma(x) \nonumber \\
+&-& \frac{i}{2} \int d^4 x d^4 y  \Delta\delta\sigma(x) \mathcal{N}(x,y) \Delta\delta\sigma(y) .
+\label{Eq9}
+\end{eqnarray}
+%
+Now, we are ready to derive the equation of motion for the meson center fields. It is obtained by $\Big(\delta\Gamma / \delta(\Delta\delta\sigma) \Big)_{\Delta\delta\sigma=0} = 0$, and so, we have
+%
+\begin{eqnarray}
+\frac{\delta S_{cl}}{\delta(\Delta\delta\sigma)}\Big\vert_{\Delta\delta\sigma=0}
++ g \rho_s + D_{\sigma}(x) + \xi_{\sigma}(x) = 0
+\label{Eq10}
+\end{eqnarray}
+%
+The first term of this 2PI action is the usual mean field result, which is of order $g$. It is written as
+%
+\begin{eqnarray}
+\rho_s = \frac{1}{2} \mathrm{tr} \left( S_{th}^{++}(x,x) + S_{th}^{--}(x,x) \right) .
+\label{scalar_density}
+\end{eqnarray}
+%
+The damping and noise kernels are of order $g^2$. The damping kernel can be written as
+%
+\begin{eqnarray}
+D_{\sigma}(x) = i g^2 \int d^4 y \theta(x^0 -y^0) M(x-y)\delta\bar\sigma (y)
+\label{DampingLocalNJL}
+\end{eqnarray}
+%
+where $M(x-y)=\mathrm{tr}[S^{<}(x-y)S^{>}(x-y)-S^{>}(x-y)S^{<}(x-y)]$ and the noise kernel, which is given by
+%
+\begin{eqnarray}
+\mathcal{N}(x,y) = - \frac{1}{2} g^2 \mathrm{tr}
+\left[ S_{th}^{<}(x,y) S_{th}^{>}(y,x) + S_{th}^{>}(x,y) S_{th}^{<}(y,x) \right] ,
+\label{noisekernel}
+\end{eqnarray}
+%
+is the correlation of the stochastic field which obeys the relation
+%
+\begin{eqnarray}
+\langle \xi (x) \rangle = 0 \quad , \quad
+\langle \xi (x) \xi (y) \rangle = \mathcal{N}(x,y)
+\label{noiseforce}
+\end{eqnarray}
+%
+\section{Magnetized quark propagator at real time formalism}
+%
+For simplicity, we assume that the magnetic field $B$ is constant and homogeneous in the $z-$ direction. Such magnetic field
+can be generated not only by the a unique vector potential. Using the proper-time method, formulated by Schwinger, the quark
+propagator in such magnetic field can be written as
+%
+\begin{equation}
+S (x,x') = \phi(x,x') \int\frac{d^4 p}{(2\pi)^4} e^{ip(x-x')} S(p) ,
+\end{equation}
+%
+where the phase factor $\phi(x,x')$ is given by
+%
+\begin{equation}
+\phi(x,x') = e^{ie\int_{x}^{x'} A(\xi) d\xi} ,
+\end{equation}
+%
+which becomes $\phi(x,x') = 1$ for closed fermion loop with two lines. For the constant magnetic field, the propagator can
+be expanded in terms of the Laguerre polynomials ($L_n$), where the order of the Laguerre polynomial corresponds to energy
+eigenvalues of the fermion in the magnetic field, known as Landau levels, see~\cite{Hasan:2017fmf}. At strong magnetic field the quarks occupy the lowest Landau levels (LLL), $n =0$. This way, the quark propagator is written as
+%
+\begin{equation}
+S^{f} (p) = (1 + \gamma^0 \gamma^3 \gamma^5) \frac{\gamma^0 p_0 - \gamma^3 p_z + m}{p_{\parallel}^2 -m^2 + i\epsilon}
+e^{-\frac{p_{T}^2}{\vert q_f B\vert}} ,
+\end{equation}
+%
+where the $f$ is the flavor index. We have used $p_{\parallel}^2 =p_{0}^2 -p_{z}^2$ and $p_{T}^2 = p_{x}^2 + p_{y}^2$. In a thermal medium, the system acquires a thermal scale which plays with the magnetic field. In the real time formalism, the quark propagator becomes a 2-rank order matrix because the Keldysh contour. This way, we have
+%
+\begin{eqnarray}
+i S_{11}^{f}(p) = S^{f} (p) + A^{f}(p) n_F(p^0) = i S^{++, f}(p) \nonumber  \\
+i S_{12}^{f}(p) = A^{f}(p) \left[ n_F(p^0) - \theta(-p^0) \right] = i S^{+-, f}(p) \nonumber \\
+i S_{21}^{f}(p) = A^{f}(p) \left[ n_F(p^0) - \theta(p^0) \right] = i S^{-+, f}(p) \nonumber  \\
+i S_{22}^{f}(p) = -S^{\ast, f} (p) + A^{f}(p) n_F(p^0) = i S^{--, f} (p)
+\end{eqnarray}
+%
+where we have defined $A^{f}(p) = S^{f} (p) - S^{\ast, f} (p)$. Using the magnetized quark propagator for LLL, we obtain the expression
+%
+\begin{eqnarray}
+A^{f}(p) = 2\pi i \left( 1 + \gamma^0 \gamma^3 \gamma^5 \right) \left( \gamma \cdot p_{\parallel} + m \right) e^{-\frac{p_T^2}{\vert q_f B\vert}} \delta\left( p_0^2 - E_z^2 \right)
+\label{Aspectral}
+\end{eqnarray}
+%
+where $\gamma \cdot p_{\parallel} = \gamma^0 p_0 - \gamma^3 p_z$.
+
+
+
+\section{Nonequilibrium Dynamics at Strong Magnetic Field}
+
+\subsection{Evaluating the Scalar density}
+
+We first write the scalar density at momentum space, as follows
+%
+\begin{eqnarray}
+\rho_s = \frac{1}{2} \int \frac{d^4 p}{(2\pi)^4}
+\mathrm{tr} \left( S^{++}(p) + S^{--}(p) \right) .
+\end{eqnarray}
+%
+The trace cover the flavor, color and spin. So, we write
+$\mathrm{tr} = \mathrm{tr}_f \mathrm{tr}_{cs}$ and we have
+%
+\begin{eqnarray}
+\rho_s = \frac{1}{2} \sum_{f=u}^{d} \int \frac{d^4 p}{(2\pi)^4}
+\mathrm{tr}_{cs} \left( S_{f}^{++}(p) + S_{f}^{--}(p) \right) .
+\end{eqnarray}
+%
+Using the propagators at real time, we can write
+%
+\begin{eqnarray}
+S^{++}(p) + S^{--}(p) = 2 \pi \hat A^{f}(p) e^{-\frac{p_T^2}{\vert q_f\vert B}}
+\left( 1 + 2 n_F (p^0) \right)\delta(p_0^2 - E_z^2) .
+\end{eqnarray}
+%
+where the $\hat{A}'s$ function involve only the Dirac matrices, given by
+%
+\begin{eqnarray}
+\hat A^{f}(p) = \left( 1 + \gamma^0 \gamma^3 \gamma^5 \right) \left( \gamma \cdot p_{\parallel} + m \right) .
+\end{eqnarray}
+%
+Taking the trace over the Dirac matrices we have
+%
+\begin{eqnarray}
+\mathrm{tr}_{cs} \left(\hat A^{f}(p)\right) = 4 N_c m ,
+\end{eqnarray}
+%
+and scalar density becomes
+%
+\begin{eqnarray}
+\rho_s &=& \frac{N_c m}{4\pi^3} \sum_{f=u}^{d} \int d^4 p
+e^{-\frac{p_T^2}{\vert q_f\vert B}}
+\left( 1 + 2 n_F (p^0) \right)\delta(p_0^2 - E_z^2) \nonumber \\
+&=& \frac{N_c m}{4\pi^3} \sum_{f=u}^{d} \int d^2 p
+e^{-\frac{p_T^2}{\vert q_f\vert B}}
+\int dp^0 dp^3
+\left( 1 + 2 n_F (p^0) \right)\delta(p_0^2 - E_z^2) ,
+\end{eqnarray}
+%
+with $E_z^2 = p_z^2 + m^2$. Using the property of the delta function,
+%
+\begin{eqnarray}
+\delta\left[p_0^2 - E_z^2 \right] = \frac{1}{2\vert E_z\vert}
+\left[\delta(p_0 + E_z) + \delta(p_0 - E_z) \right]
+\end{eqnarray}
+%
+and integrating over $p^0$ we have
+%
+\begin{eqnarray}
+\rho_s = \frac{N_c m}{4\pi^3} \sum_{f=u}^{d} \int d^2 p
+e^{-\frac{p_T^2}{\vert q_f\vert B}}
+\int \frac{dp_z}{2 E_z}\left( 1 + 2 n_F (E_z) \right)
+\end{eqnarray}
+%
+Evaluating the integral over the transversal momentum and changing the variable in $p_z$,
+we obtain
+%
+\begin{eqnarray}
+\rho_s = \frac{N_c m}{4\pi^2}
+\left( \vert q_u\vert + \vert q_d\vert \right) B
+\int\frac{d E_z}{2\sqrt{E_z^2 -m^2}}\left( 1 + 2 n_F (E_z) \right)
+\end{eqnarray}
+%
+
+
+
+\subsection{Evaluating the Damping kernel}
+%
+Following the considerations discussed in~\cite{Nahrgang:2011mg}, we use the harmonic initial oscillations and, hence, one can rewrite the damping kernel in momentum space as
+%
+\begin{eqnarray}
+D_{\sigma}(x) = - g^2 \int \frac{d^3 k}{(2\pi)^3} e^{i \vec{k} \cdot \vec{x}} \frac{1}{2E_k}
+ M(E_k, \vec{k}) \partial_{t}\bar\sigma (t,\vec{k})
+\end{eqnarray}
+%
+$M(E_k, \vec{k})$ contains on-shell reaction rate of the processes that lead to the dissipative contribution.
+Being interested in the long-range oscillations of $\sigma$, we calculate the damping coefficient $\eta$ for the zero mode, $\vec{k} = \vec{0}$, of the $\sigma$ mean field and approximate $M(E_k, \vec{k}) \approx M(m_{\sigma} , \vec{0})$.
+%
+\begin{eqnarray}
+D_{\sigma}(x) \approx - g^2 \int \frac{d^3 k}{(2\pi)^3} e^{i \vec{k} \cdot \vec{x}}  \frac{1}{2m_{\sigma}} M(m_{\sigma},0) \partial_{t}\bar\sigma (t,\vec{k}) = - \eta \partial_{t}\bar\sigma (t,x)
+\end{eqnarray}
+%
+where we have obtained the damping coefficient $\eta$ as
+%
+\begin{eqnarray}
+\eta = \frac{g^2}{2m_{\sigma}} M( m_{\sigma},\vec{0} ).
+\label{damping_coeff}
+\end{eqnarray}
+%
+Now, we can evaluate the damping kernel once specified the quark propagator in the Keldysh contour. In order to do so, we
+rewrite below the $M(x-y)$ in momentum space
+%
+\begin{eqnarray}
+M(x-y) = \int \frac{d^4 k}{(2\pi)^4} M(k) e^{i k (x-y) }
+\end{eqnarray}
+%
+where the Fourier transform is given by
+%
+\begin{eqnarray}
+ M(k) = \int \frac{d^4 p}{(2\pi)^4} \mathrm{tr} \left[ S^{<}(k+p) S^{>}(p) -
+ S^{>}(k+p) S^{<}(p) \right]
+\end{eqnarray}
+%
+where we have followed the notation $S^{<}(p) = S^{+-}(p)$ and $S^{>}(p) = S^{-+}(p)$.
+
+Finding the complete thermo-magnetic dependence of the damping coefficient requires evaluate explicitly the momentum space of the quantity $M(x-y)$.
+
+Remember that the trace is taken over the flavor, color and spin. So, we write
+$\mathrm{tr} = \mathrm{tr}_f \mathrm{tr}_{cs}$ and we obtain
+%
+\begin{eqnarray}
+M^{f f'}(k) = \int \frac{d^4 p}{(2\pi)^4} \mathrm{tr}_{cs}[S_{f}^{<}(k+p)S_{f'}^{>}(p)
+- S_{f}^{>}(k+p)S_{f'}^{<}(p)] ,
+\label{M_quantity2}
+\end{eqnarray}
+%
+where $M(k) =\sum_{f,f'=u}^{d} M^{f f'}(k)$. This way, using the real time propagators, we can rewrite the above quantity as
+%
+\begin{eqnarray}
+M^{f f'}(k) &=& \int \frac{d^4 p}{(2\pi)^2}
+e^{-\frac{(k_T + p_T)^2}{\vert q_f \vert B}} e^{-\frac{p_T^2}{\vert q_{f'} \vert B}}
+\mathrm{tr}_{cs}[\hat{A}_{f}(k+p)\hat{A}_{f'}(p)]
+ D(k^0 + p^0 ,p^0) \nonumber  \\
+&\times& \delta\left[(k_0 +p_0)^2 - (E_z^{f})^2 \right]
+\delta\left[p_0^2 - (E_z^{f'})^2 \right] ,
+\label{M_quantity3}
+\end{eqnarray}
+%
+where we have defined
+%
+\begin{eqnarray}
+D(k^0+p^0 ,p^0 ) &=& \left[ n_F (p^0) - \theta(p^0) \right] \left[ n_F (k^0 +p^0) - \theta(-k^0 -p^0) \right] \nonumber  \\
+&-& \left[ n_F (p^0) - \theta(-p^0) \right] \left[ n_F (k^0 +p^0) - \theta(k^0 +p^0) \right]
+\label{D_function}
+\end{eqnarray}
+%
+and the $\hat{A}'s$ function involve only the Dirac matrices, given by
+%
+\begin{eqnarray}
+\hat A^{f}(p) = \left( 1 + \gamma^0 \gamma^3 \gamma^5 \right) \left( \gamma \cdot p_{\parallel} + m \right) .
+\end{eqnarray}
+%
+By using the expressions for the spectral density~(\ref{Aspectral}), we show that
+%
+\begin{eqnarray}
+\mathrm{tr}_{cs}[\hat{A}^{f}(k+p)\hat{A}^{f'}(p)] &=& 8 \left[ p^0 \left(k^0 +p^0 \right) - p^3 \left(k^3 +p^3 \right) + m^2 \right] \nonumber  \\
+&=& 8 N_c T\left( k^0, k^3 ; p^0 , p^3 \right) ,
+\label{spectral_trace}
+\end{eqnarray}
+%
+and we rewrite
+%
+\begin{eqnarray}
+M^{f f'}(k) &=& \frac{2N_c}{\pi^2} \int d^4 p
+e^{-\frac{(k_T + p_T)^2}{\vert q_f \vert B}} e^{-\frac{p_T^2}{\vert q_{f'} \vert B}}
+T\left( k^0, k^3 ; p^0 , p^3 \right)
+ D(k^0 + p^0 ,p^0) \delta\left[(k_0 +p_0)^2 - E_z^2 \right] \nonumber  \\
+&\times& \delta\left[p_0^2 - E_z^2 \right] ,
+\end{eqnarray}
+%
+where the energy $E_z^2 = p_z^2 + m^2$ does not depend on the flavor.
+Note that we can separate the transversal and longitudinal parts. Doing so, we have
+%
+\begin{eqnarray}
+M_{T}^{f f'}(k_T) = \int d^2 p
+e^{-\frac{(k_T + p_T)^2}{\vert q_f \vert B}} e^{-\frac{p_T^2}{\vert q_{f'} \vert B}} ,
+\label{damping_kernel_transv}
+\end{eqnarray}
+%
+as the transversal part and
+%
+\begin{eqnarray}
+M_{L}(k^0 , k^3) = \int dp^0 dp^3
+T\left( k^0, k^3 ; p^0 , p^3 \right) D(k^0 + p^0 ,p^0) \delta\left[(k_0 +p_0)^2 - E_z^2 \right]  \delta\left[p_0^2 - E_z^2 \right] ,
+\label{damping_kernel_long}
+\end{eqnarray}
+%
+as the longitudinal part. Then, the damping kernel with flavors is
+%
+\begin{eqnarray}
+M^{f f'}(k) = \frac{2N_c}{\pi^2} M_{T}^{f f'}(k^1, k^2) M_{L}(k^0,k^3).
+\end{eqnarray}
+%
+Remembering that, we are interested in the zero mode of the damping kernel, where
+$(k^0, \vec{k} ) = (m_{\sigma}, \vec{0})$, our relation becomes
+%
+\begin{eqnarray}
+M^{f f'}(m_{\sigma}, \vec{0}) = \frac{2N_c}{\pi^2} M_{T}^{f f'}(0) M_{L}(m_{\sigma}, 0).
+\label{damping_kernel_flavor}
+\end{eqnarray}
+%
+
+\subsubsection{Damping kernel: Longitudinal part}
+
+Using the properties of the delta function, we have
+%
+\begin{eqnarray}
+\delta\left[p_0^2 - E_z^2 \right] = \frac{1}{2\vert E_z\vert}
+\left[\delta(p_0 + E_z) + \delta(p_0 - E_z) \right]
+\end{eqnarray}
+%
+and, integrating over the variable $p^0$, we obtain
+%
+\begin{eqnarray}
+M_{L}(k^0 , k^3) &=& \int d p_z \frac{1}{2\vert E_z \vert} \biggl[
+T\left( k^0, k^3 ; -E_z , p^3 \right) D(k^0 -E_z , -E_z )
+\delta\left[ (k^0 - E_z )^2 - E_z^2 \right] \nonumber  \\
+&+&
+T\left( k^0, k^3 ; E_z , p^3 \right) D(k^0 +E_z , E_z )
+\delta\left[ (k^0 + E_z )^2 - E_z^2 \right]
+ \biggr].
+\end{eqnarray}
+%
+Using the following delta function property,
+%
+\begin{eqnarray}
+\delta\left[ (k^0 + \eta E_z )^2 - E_z^2 \right] = \frac{\delta(k^0)}{2\vert E_z\vert}
++ \frac{\delta(k^0 + 2 \eta E_z )}{2\vert E_z\vert} , \quad \eta = \pm 1 ,
+\end{eqnarray}
+%
+we obtain four terms and just one term is relevant for us. It is written below
+%
+\begin{eqnarray}
+M_{L}(k^0 , k^3) = \int d p_z \frac{1}{4 E_z^2}
+T\left( k^0, k^3 ; -E_z , p_z \right) D(k^0 -E_z , -E_z )
+\delta\left( k^0 - 2 E_z \right) .
+\end{eqnarray}
+%
+Making the variable changing
+%
+\begin{eqnarray}
+d p_z = \frac{E_z}{\sqrt{E_z^2 - m^2}} dE_z ,
+\end{eqnarray}
+%
+and integrating over the $E_z$, we obtain
+%
+\begin{eqnarray}
+M_{L}(k^0 , k^3) = \frac{D(k^0 /2 , -k^0 /2 )}{k^0 \sqrt{k^0 -4 m^2}}
+T\left( k^0, k^3 ; -\frac{k^0}{2}, \frac{\sqrt{(k^0)^2 -4m^2}}{2} \right) .
+\end{eqnarray}
+%
+Now, for the zero mode, we have
+%
+\begin{eqnarray}
+M_{L}(m_{\sigma}, 0) =
+\frac{D(m_{\sigma} /2 , -m_{\sigma} /2 )}{m_{\sigma} \sqrt{m_{\sigma} -4 m^2}}
+T\left( m_{\sigma}, 0 ; -\frac{m_{\sigma}}{2} , \frac{\sqrt{m_{\sigma}^2 -4 m^2}}{2} \right) .
+\end{eqnarray}
+%
+
+Using the equations in (\ref{D_function}, \ref{spectral_trace}), we obtain
+%
+\begin{eqnarray}
+D(m_{\sigma} /2 , -m_{\sigma} /2 ) &=& - \left[ 1 - 2 n_F (\frac{m_{\sigma}}{2}) \right]
+\nonumber \\
+T\left( m_{\sigma}, 0 ; -\frac{m_{\sigma}}{2} , \frac{\sqrt{m_{\sigma}^2 -4m^2}}{2} \right)
+&=& - \frac{(m_{\sigma}^2 - 4 m^2)}{2} .
+\end{eqnarray}
+%
+and, as a result, longitudinal part of the damping kernel becomes
+%
+\begin{eqnarray}
+M_{L}(m_{\sigma}, \vec{0}) = \frac{\sqrt{m_{\sigma}^2 -4 m^2}}{2 m_{\sigma} }
+\left[ 1 - 2 n_F (\frac{m_{\sigma}}{2}) \right] .
+\end{eqnarray}
+%
+
+\subsubsection{Damping kernel: Transversal part}
+%
+For the zero mode, this part becomes
+%
+\begin{eqnarray}
+M_{T}^{f f'}(0) = \int d^2 p
+e^{-\frac{p_T^2}{\vert q_f \vert B}} e^{-\frac{p_T^2}{\vert q_{f'} \vert B}} ,
+\end{eqnarray}
+%
+and integrating over the angular part, we obtain
+%
+\begin{eqnarray}
+M_{T}^{f f'}(0) &=& 2 \pi \int_{0}^{\infty} d p_T p_T
+\exp\left( - \frac{\vert q_f \vert + \vert q_f' \vert}{\vert q_f q_f' \vert }
+\frac{p_T^2}{B} \right) \nonumber \\
+&=& \frac{\vert q_f q_f' \vert}{\vert q_f \vert + \vert q_f' \vert } \pi B
+\end{eqnarray}
+
+\subsubsection{Damping coefficient}
+%
+We are ready to write the damping coefficient. This way, from (\ref{damping_kernel_flavor}) and
+using the previous results, we have
+%
+\begin{eqnarray}
+M^{f f'}(m_{\sigma}, \vec{0}) = \frac{N_c}{\pi}
+\frac{\sqrt{m_{\sigma}^2 -4 m^2}}{ m_{\sigma} }
+\left[ 1 - 2 n_F (\frac{m_{\sigma}}{2}) \right]
+\frac{\vert q_f q_f' \vert}{\vert q_f \vert + \vert q_f' \vert } B.
+\end{eqnarray}
+%
+And the damping coefficient (\ref{damping_coeff}) is
+%
+\begin{eqnarray}
+\eta = \frac{g^2}{m_{\sigma}} \sum_{f,f'=u}^{d} M^{f f'}(m_{\sigma}, \vec{0}).
+\label{damping_coeff}
+\end{eqnarray}
+%
+
+\subsection{Evaluating the Noise kernel}
+
+%
+\begin{eqnarray}
+\mathcal{N}( k ) = - \frac{g^2}{2} \int \frac{d^4 p}{(2\pi)^4} \mathrm{tr}
+\Big[ S_{th, B}^{<}( k + p ) S_{th, B}^{>}( p )
++ S_{th, B}^{>}(k + p ) S_{th, B}^{<}( p ) \Big] .
+\label{NoiseKernel}
+\end{eqnarray}
+%
+As the trace is taken over the flavor, color and spin. Then, we write $tr = tr_f tr_{cs}$ and
+we obtain
+%
+\begin{eqnarray}
+\mathcal{N}( k ) &=& - \frac{g^2}{2} \sum_{f,f'=u}^{d} \int \frac{d^4 p}{(2\pi)^4} \mathrm{tr}_{cs} \Big[ S_{f}^{<}( k + p ) S_{f'}^{>}( p )
++ S_{f}^{>}(k + p ) S_{f'}^{<}( p ) \Big] , \nonumber \\
+\mathcal{N}( k ) &=& - \frac{g^2}{2} \sum_{f,f'=u}^{d} \mathcal{N}^{f,f'}( k ) .
+\label{Noise_Kernel}
+\end{eqnarray}
+%
+Using the real time propagators, we obtain
+%
+\begin{eqnarray}
+\mathcal{N}^{f,f'}( k ) &=& \int \frac{d^4 p}{(2\pi)^2}
+e^{-\frac{(k_T + p_T)^2}{\vert q_f \vert B}} e^{-\frac{p_T^2}{\vert q_{f'} \vert B}}
+\mathrm{tr}_{cs}[\hat{A}_{f}(k+p)\hat{A}_{f'}(p)]
+ E(k^0 + p^0 ,p^0) \nonumber  \\
+&\times& \delta\left[(k_0 +p_0)^2 - (E_z^{f})^2 \right]
+\delta\left[p_0^2 - (E_z^{f'})^2 \right] ,
+\end{eqnarray}
+%
+where we have
+%
+\begin{eqnarray}
+E(k^0+p^0 ,p^0 ) &=& \left[ n_F (p^0) - \theta(p^0) \right] \left[ n_F (k^0 +p^0) - \theta(-k^0 -p^0) \right] \nonumber  \\
+&+& \left[ n_F (p^0) - \theta(-p^0) \right] \left[ n_F (k^0 +p^0) - \theta(k^0 +p^0) \right].
+\label{E_function}
+\end{eqnarray}
+%
+Following the previous calculation, we can write
+%
+\begin{eqnarray}
+\mathcal{N}^{f,f'}( k ) &=& \frac{2N_c}{\pi^2} \int d^4 p
+e^{-\frac{(k_T + p_T)^2}{\vert q_f \vert B}} e^{-\frac{p_T^2}{\vert q_{f'} \vert B}}
+T\left( k^0, k^3 ; p^0 , p^3 \right)
+ E(k^0 + p^0 ,p^0) \delta\left[(k_0 +p_0)^2 - E_z^2 \right] \nonumber  \\
+&\times& \delta\left[p_0^2 - E_z^2 \right] ,
+\end{eqnarray}
+%
+where the energy $E_z^2 = p_z^2 + m^2$ does not depend on the flavor. As done before, we separate the transversal and longitudinal parts. Doing so, we have
+%
+\begin{eqnarray}
+\mathcal{N}_{T}^{f f'}(k_T) = \int d^2 p
+e^{-\frac{(k_T + p_T)^2}{\vert q_f \vert B}} e^{-\frac{p_T^2}{\vert q_{f'} \vert B}} ,
+\label{noise_kernel_transv}
+\end{eqnarray}
+%
+as the transversal part and
+%
+\begin{eqnarray}
+\mathcal{N}_{L}(k^0 , k^3) = \int dp^0 dp^3
+T\left( k^0, k^3 ; p^0 , p^3 \right) E(k^0 + p^0 ,p^0) \delta\left[(k_0 +p_0)^2 - E_z^2 \right]  \delta\left[p_0^2 - E_z^2 \right] ,
+\end{eqnarray}
+%
+as the longitudinal part. Then, the noise kernel with flavors is
+%
+\begin{eqnarray}
+\mathcal{N}^{f f'}(k) = \frac{2N_c}{\pi^2} \mathcal{N}_{T}^{f f'}(k^1, k^2) \mathcal{N}_{L}(k^0,k^3).
+\label{noise_kernel_long}
+\end{eqnarray}
+%
+Remembering that, we are interested in the zero mode of the noise kernel, where
+$(k^0, \vec{k} ) = (m_{\sigma}, \vec{0})$, our relation becomes
+%
+\begin{eqnarray}
+\mathcal{N}^{f f'}(m_{\sigma}, \vec{0}) = \frac{2N_c}{\pi^2} \mathcal{N}_{T}^{f f'}(0, 0) \mathcal{N}_{L}(m_{\sigma}, 0).
+\label{noise_kernel_flavor}
+\end{eqnarray}
+%
+Note that, the transversal noise kernel has the same structure that~(\ref{damping_kernel_transv}) and, therefore, it is
+%
+\begin{eqnarray}
+\mathcal{N}_{T}^{f f'}(0) =
+ \frac{\vert q_f q_f' \vert}{\vert q_f \vert + \vert q_f' \vert } \pi B .
+\end{eqnarray}
+%
+The longitudinal noise kernel differs from (\ref{damping_kernel_long}) by the function
+%
+\begin{eqnarray}
+E(m_\sigma/2 ,-m_\sigma/2) = 2 n_F^2(\frac{m_\sigma}{2}) - 2 n_F(\frac{m_\sigma}{2}) + 1
+= \left[ 1 - 2 n_F(\frac{m_\sigma}{2}) \right] \coth\left( \frac{m_\sigma}{2T}\right)
+\end{eqnarray}
+%
+and, hence, we have
+%
+\begin{eqnarray}
+\mathcal{N}_{L}(m_{\sigma}, \vec{0}) = - \frac{\sqrt{m_{\sigma}^2 -4 m^2}}{2 m_{\sigma} }
+\left[ 1 - 2 n_F (\frac{m_{\sigma}}{2}) \right] \coth\left( \frac{m_\sigma}{2T}\right) .
+\end{eqnarray}
+%
+The noise kernel with flavors becomes.
+%
+\begin{eqnarray}
+\mathcal{N}^{f f'}(m_{\sigma}, \vec{0}) = - \frac{N_c}{\pi}
+\frac{\sqrt{m_{\sigma}^2 -4 m^2}}{m_{\sigma} }
+\left[ 1 - 2 n_F (\frac{m_{\sigma}}{2}) \right] \coth\left( \frac{m_\sigma}{2T}\right)
+\frac{\vert q_f q_f' \vert}{\vert q_f \vert + \vert q_f' \vert } B
+\label{noise_kernel_flavor}
+\end{eqnarray}
+%
+and the Eq.~(\ref{Noise_Kernel}) is found as
+%
+\begin{eqnarray}
+\mathcal{N}(m_{\sigma}, \vec{0})  &=& - \frac{g^2}{2} \sum_{f, f'=u}^{d} \mathcal{N}^{f f'}(m_{\sigma}, \vec{0})
+\nonumber \\
+\mathcal{N}(m_{\sigma}, \vec{0}) &=& \frac{m_{\sigma}}{2} \eta \coth\left( \frac{m_\sigma}{2T}\right) ,
+\end{eqnarray}
+%
+where the damping coefficient was defined in (\ref{damping_coeff}).
+\newpage
+
+
+
+\newpage
+
+
+
+
+
+In order to find the
+above expression we write more explicitly the propagators
+%
+\begin{eqnarray}
+S_{sB}^{<}(p) = 2\pi T_B(p_0, p_z, p_{T}) \left[ n_F(p^0) - \theta(-p^0) \right] \delta(p_0^2 - E_z^2)  \nonumber  \\
+S_{sB}^{>}(p) = 2\pi T_B(p_0, p_z, p_{T}) \left[ n_F(p^0) - \theta(p^0) \right] \delta(p_0^2 - E_z^2)
+\end{eqnarray}
+%
+where, for simplicity, we have defined
+%
+\begin{eqnarray}
+T_B(p_0, p_z, p_{T}) = (1 + \gamma^0 \gamma^3 \gamma^5) (\gamma^0 p_0 - \gamma^3 p_z + m ) e^{-\frac{p_{T}^2}{\vert q B\vert}},
+\end{eqnarray}
+%
+and $E_z^2 = p_z^2 + m^2$. This way, one can write
+%
+\begin{eqnarray}
+ M(k) = \int \frac{d^4 p}{(2\pi)^2} \tilde{T}_B (k_0 + p_0, k_z +p_z, k_{T} +p_{T} ;p_0, p_z, p_{T} )  D(k^0+p^0 ,p^0 ) \delta(p_0^2 - E_z^2) \delta\left( (k^0 +p_0 )^2 - E_z^2 \right)
+\end{eqnarray}
+%
+where we have
+%
+\begin{eqnarray}
+\tilde{T}_B (k_0 + p_0, k_z +p_z, k_{T} +p_{T} ;p_0, p_z, p_{T} ) &=&
+\mathrm{tr} \left[ T_B(k_0 + p_0, k_z +p_z, k_{T} +p_{T}) T_B(p_0, p_z, p_{T}) \right]  \nonumber  \\
+D(k^0+p^0 ,p^0 ) &=& \left[ n_F (p^0) - \theta(p^0) \right] \left[ n_F (k^0 +p^0) - \theta(-k^0 -p^0) \right] \nonumber  \\
+&-& \left[ n_F (p^0) - \theta(-p^0) \right] \left[ n_F (k^0 +p^0) - \theta(k^0 +p^0) \right] .
+\end{eqnarray}
+%
+Using the expression for the delta function $\delta(p_0^2 - E_z^2) = (2E_z)^{-1} \left[\delta(p_0 + E_z) + \delta(p_0 - E_z) \right]$, we can realize the integration over the $p^0$ variable and we obtain
+%
+\begin{eqnarray}
+ M(k) &=& \int \frac{d^3 p}{(2\pi)^2} \frac{1}{2E_z} \biggl[ \tilde{T}_B (k_0 + E_z, k_z +p_z, k_{T} +p_{T} ;E_z, p_z, p_{T} )
+  D(k^0+E_z ,E_z )
+ \delta\left( (k^0 + E_z )^2 - E_z^2 \right) \nonumber  \\
+&+&\tilde{T}_B (k_0 - E_z, k_z +p_z, k_{T} +p_{T} ;- E_z, p_z, p_{T} ) D(k^0 - E_z ,- E_z ) \delta\left( (k^0 -E_z )^2 - E_z^2 \right) \biggr]
+\end{eqnarray}
+%
+Now, we have to apply the second delta function. To do so, we use the following relation, with $\eta = \pm 1$.
+%
+\begin{eqnarray}
+\delta \left[ (k_0 + \eta E_z)^2 - E_z^2 \right] = \delta\left[k_0 (k_0 + 2\eta E_z) \right] = \frac{\delta(k_0)}{2E_z}
++ \frac{\delta(k_0 + 2\eta E_z)}{2E_z}
+\end{eqnarray}
+%
+As we will see soon, only the term $\delta(k_0 - 2 E_z)$ contributes for the problem. This way, we have
+%
+\begin{eqnarray}
+ M(k) = \int \frac{d^3 p}{(2\pi)^2} \frac{1}{4E_z^2} \biggl[ \tilde{T}_B (k_0 - E_z, k_z +p_z, k_{T} +p_{T} ;- E_z, p_z, p_{T} ) D(k^0 - E_z ,- E_z ) \delta\left( k^0 - 2 E_z \right) \biggr]
+\end{eqnarray}
+%
+In order to get rid of the delta function we change the integration over the $p_z$ to $E_z$ through of
+%
+\begin{eqnarray}
+d p_z = \frac{E_z}{\sqrt{E_z^2 -m^2}} dE_z
+\end{eqnarray}
+%
+%
+\begin{eqnarray}
+ M(k) = \frac{D(k_0/2 ,- k_0/2)}{k_0\sqrt{k_0^2 -4m^2}}
+ \int \frac{d^2 p}{(2\pi)^2} \biggl[ \tilde{T}_B (\frac{k_0}{2}, k_z +\sqrt{k_0^2/4 -m^2}, k_{T} +p_{T} ;-\frac{k_0}{2}, \sqrt{k_0^2/4 -m^2}, p_{T} ) \biggr]
+\end{eqnarray}
+%
+To moving on, we evaluate explicitly the expression for $\tilde{T}_B$ performing the trace over the Dirac matrices. As a result, we obtain
+%
+\begin{eqnarray*}
+\tilde{T}_B (k_0 + p_0, k_z +p_z, k_{T} +p_{T} ;p_0, p_z, p_{T} ) =
+2 d_q e^{-\frac{(k_T + p_T)^2}{\vert qB\vert}} e^{-\frac{p_T^2}{\vert qB\vert}}
+\left[ 8 p_0 (k_0 +p_0) -  8 p_z (k_z +p_z) + 8 m^2  \right]
+\end{eqnarray*}
+%
+This way, we use the same approximation as in~\cite{Nahrgang:2011mg} where $k^0 = m_\sigma$ and $\vec{k} =0$. Hence, we can write the above expression as
+%
+\begin{eqnarray*}
+\tilde{T}_B (m_\sigma + p_0, p_z, p_{T} ;p_0, p_z, p_{T} ) =
+16 d_q \exp\left(-2\frac{p_T^2}{\vert qB\vert}\right) \left[ 2 m^2 -\frac{m_{\sigma}^2}{2} \right]
+\end{eqnarray*}
+%
+So, we write
+%
+\begin{eqnarray}
+ M(m_\sigma, \vec{0}) = \frac{D(m_\sigma/2 ,-m_\sigma/2)}{m_\sigma\sqrt{m_\sigma^2 -4m^2}}
+ 16 d_q \left[ 2 m^2 -\frac{m_{\sigma}^2}{2} \right]
+ \int \frac{d^2 p}{(2\pi)^2} \exp\left(-2\frac{p_T^2}{\vert qB\vert}\right)
+\end{eqnarray}
+%
+The integration over the transverse momentum is easily evaluated and written as
+%
+\begin{eqnarray}
+\int \frac{d^2 p}{(2\pi)^2} \exp\left(-2\frac{p_T^2}{\vert qB\vert}\right) = \frac{1}{8\pi} \vert qB \vert
+\end{eqnarray}
+%
+Therefore, we obtain
+%
+\begin{eqnarray}
+ M(m_\sigma, \vec{0}) = \frac{D(m_\sigma/2 ,-m_\sigma/2)}{m_\sigma\sqrt{m_\sigma^2 -4m^2}}
+ \frac{2 d_q}{\pi} \left[ 2 m^2 -\frac{m_{\sigma}^2}{2} \right] \vert qB \vert .
+\end{eqnarray}
+%
+Using the previous expression, we obtain $D(m_\sigma/2 ,-m_\sigma/2) = -\left( 1 - 2 n_F(m_\sigma/2) \right)$. This way, one write
+%
+\begin{eqnarray}
+ M(m_\sigma, \vec{0}) = \frac{d_q}{\pi} \sqrt{1 -4 \frac{m^2}{m_{\sigma}^2} }
+  \left( 1 - 2 n_F(\frac{m_\sigma}{2}) \right) \vert qB \vert .
+\end{eqnarray}
+%
+As a final result, we find the damping coefficient $\eta$ as
+%
+\begin{eqnarray}
+\eta = g^2 \frac{d_q}{2\pi} \sqrt{1 -4 \frac{m^2}{m_{\sigma}^2} }
+  \left( 1 - 2 n_F(\frac{m_{\sigma}}{2}) \right) \frac{\vert qB \vert}{m_{\sigma}}
+\end{eqnarray}
+%
+%
+\subsection{Evaluating the Noise kernel}
+%
+The variance of the stochastic field in momentum space becomes
+%
+\begin{eqnarray}
+\langle \xi (x) \xi (y) \rangle = \mathcal{N}(x,y) =
+ \int \frac{d^4 k}{(2\pi)^4} \mathcal{N}(\omega,\vec{k}) e^{i k (x - y)} ,
+\label{noiseforce}
+\end{eqnarray}
+%
+where noise kernel in momentum space is simply given by
+%
+\begin{eqnarray}
+\mathcal{N}(x,y) = - \frac{1}{2} g^2 \mathrm{tr}
+\left[ S_{sB}^{<}(x,y) S_{sB}^{>}(y,x) + S_{sB}^{>}(x,y) S_{sB}^{<}(y,x) \right]
+\label{noisekernel}
+\end{eqnarray}
+%
+Making use again the same consideration discussed in ref.~\cite{Nahrgang:2011mg} and using the approximation
+$k = \left( m_\sigma , \vec{0} \right) $ we write down the relation
+%
+\begin{eqnarray}
+\langle \xi (t) \xi (t') \rangle = \frac{1}{V} \mathcal{N}(m_\sigma,0) \delta(t -t')
+\end{eqnarray}
+%
+Now, we evaluate the noise kernel which gives the strength of the noise fluctuations. This way, the kernel in momentum
+space is written as
+%
+\begin{eqnarray}
+\mathcal{N}(k) = - \frac{g^2}{2} \int \frac{d^4 p}{(2\pi)^4} \mathrm{tr}
+\left[ S_{sB}^{<}(k+p) S_{sB}^{>}(p) + S_{sB}^{>}(k+p) S_{sB}^{<}(p) \right]
+\end{eqnarray}
+%
+Using the expression obtained previously for the quark propagator at Keldysh contour, we obtain
+%
+\begin{eqnarray*}
+\mathcal{N}(k) = -\frac{g^2}{2} \int \frac{d^4 p}{(2\pi)^2} \tilde{T}_B (k_0 + p_0, k_z +p_z, k_{T} +p_{T} ;p_0, p_z, p_{T} )
+E(k^0+p^0 ,p^0 ) \delta(p_0^2 - E_z^2) \delta\left( (k^0 +p_0 )^2 - E_z^2 \right)
+\end{eqnarray*}
+%
+where $\tilde{T}_B$ is the same expression defined before, on the other hand, the function $E(k^0+p^0 ,p^0 )$ is given by
+%
+\begin{eqnarray}
+E(k^0+p^0 ,p^0 ) &=& \left[ n_F (p^0) - \theta(p^0) \right] \left[ n_F (k^0 +p^0) - \theta(-k^0 -p^0) \right] \nonumber  \\
+&+& \left[ n_F (p^0) - \theta(-p^0) \right] \left[ n_F (k^0 +p^0) - \theta(k^0 +p^0) \right] .
+\end{eqnarray}
+%
+Therefore, applying the delta functions via integration over $p^0$, we reduce the above expression to
+%
+\begin{eqnarray}
+\mathcal{N}(k) = - \frac{g^2}{2} \int \frac{d^3 p}{(2\pi)^2} \frac{1}{4E_z^2} \biggl[ \tilde{T}_B (k_0 - E_z, k_z +p_z, k_{T} +p_{T} ;- E_z, p_z, p_{T} ) E(k^0 - E_z ,- E_z ) \delta\left( k^0 - 2 E_z \right) \biggr]
+\end{eqnarray}
+%
+Following the same procedure, as done before, we integrate over $E_z$ and after that we use $k = (m_\sigma, \vec{0}$ as
+an approximation. This way, we perform the integration over the transverse momentum $p_T$ and we obtain
+%
+\begin{eqnarray}
+\mathcal{N}(m_\sigma, \vec{0}) = - \frac{g^2}{2} \frac{E(m_\sigma/2 ,-m_\sigma/2)}{m_\sigma\sqrt{m_\sigma^2 -4m^2}}
+ \frac{2 d_q}{\pi} \left[ 2 m^2 -\frac{m_{\sigma}^2}{2} \right] \vert qB \vert .
+\end{eqnarray}
+%
+Evaluating explicitly the function $E(k^0+p^0 ,p^0 )$ we find
+%
+\begin{eqnarray}
+E(m_\sigma/2 ,-m_\sigma/2) &=& 2 n_F^2(\frac{m_\sigma}{2}) - 2 n_F(\frac{m_\sigma}{2}) + 1 \nonumber  \\
+&=& \left[ 1 - 2 n_F(\frac{m_\sigma}{2}) \right] \coth\left( \frac{m_\sigma}{2T}\right)
+\end{eqnarray}
+%
+This way, the noise kernel can be written as
+%
+\begin{eqnarray}
+\mathcal{N}(m_\sigma, \vec{0}) = g^2 \frac{d_q}{2\pi} \sqrt{1 - 4\frac{m^2}{m_\sigma^2}}
+\left( 1 - 2 n_F(\frac{m_\sigma}{2}) \right)  \coth\left( \frac{m_\sigma}{2T}\right) \vert qB \vert  .
+\end{eqnarray}
+%
+In addition, we can also relate the noise kernel with the damping kernel, as follows
+%
+\begin{eqnarray}
+\mathcal{N}(m_\sigma, \vec{0}) = \frac{g^2}{2} M (m_\sigma, \vec{0})
+ \coth\left( \frac{m_\sigma}{2T}\right)  .
+\end{eqnarray}
+%
+
+%
+\subsection{Lowest order}
+%
+For the lowest-order contribution, we calculate the second term in Eq.~(\ref{Eq10}). This way, we have
+%
+\begin{eqnarray}
+g \mathrm{tr} S_{th}^{++}(x,x) =
+g \int \frac{d^4 p}{(2\pi)^4}  \mathrm{tr} S_{th}^{++}(p) .
+\end{eqnarray}
+%
+We use the expression for the quark propagator at Keldysh contour, $S^{++}(p)$, and after some algebraical
+manipulations with the trace we can find
+%
+\begin{eqnarray}
+g \mathrm{tr} S_{th}^{++}(x,x) = - 8 d_q m g \int \frac{d^3 p}{(2\pi)^3}
+\frac{1}{E_z} n_F (E_z) e^{-\frac{p_T^2}{\vert qB \vert}}
+\end{eqnarray}
+%
+After the integration over the transversal momentum and the $p_z$ coordinates, we find
+%
+\begin{eqnarray}
+g \mathrm{tr} S_{th}^{++}(x,x) = - d_q m g \frac{\vert qB \vert}{\pi^2}
+\int d E_z \frac{n_F (E_z)}{\sqrt{E_z^2 -m^2}} = - g \rho_s(E_z)
+\end{eqnarray}
+%
+%
+\subsection{Langevin equation}
+%
+After that calculations, we are able to write down the equation of motion for the chiral field. Plugging
+the above terms into the Eq.~(\ref{Eq10}) we have
+%
+\begin{eqnarray}
+\partial_\mu \partial^{\mu} \sigma + \frac{\partial U}{\partial\sigma} + g \rho_s
++ \eta \partial_t \bar\sigma (x) = \xi (x)
+\end{eqnarray}
+%
+
+\section{Nonequilibrium Dynamics at Weak Magnetic Field}
+
+\subsection{Propagator at weak magnetic field limit}
+
+In addition, we can also work in the weak magnetic field limit. This way, we can write it as
+%
+\begin{equation}
+S_{wB} (p) = \frac{\gamma^\mu p_\mu + m}{p^2 - m^2 + i\epsilon} + \frac{i \gamma_1 \gamma_2 (\gamma \cdot p_{\parallel} + m)}{(p^2 - m^2 + i\epsilon)^2} e B = S_0(p) + S_B (p).
+\end{equation}
+%
+From the above propagator we can find the spectral density where we have two contributions: one from the first term and other from the second one. This way, we have
+%
+\begin{equation}
+ A_{wB}(p) = A_0 (p) + A_{B} (p)
+\end{equation}
+%
+where each term is given by
+%
+\begin{eqnarray}
+A_0 (p) &=& 2\pi i ( \gamma^\mu p_\mu + m ) \delta(p_0^2 - E_p^2) \nonumber \\
+A_{B} (p) &=& 2\pi i^2 \gamma_1 \gamma_2 (\gamma \cdot p_{\parallel} + m) \delta(p_0^2 - E_p^2) \Delta(p_0 ,E_p)
+\end{eqnarray}
+%
+where the function, for simplicity, we have defined
+%
+\begin{equation}
+\Delta(p_0 ,E_p) = \frac{1}{E_p} \frac{p_0 - E_p}{(p_0 - E_p)^2 + \epsilon^2} - \frac{1}{E_p} \frac{p_0 + E_p}{(p_0 + E_p)^2 + \epsilon^2}
+\end{equation}
+%
+and the limit $\epsilon \rightarrow 0$ should be taken carefully. As before, we use the Keldysh formalism in order to write the
+thermal version of this real propagator. Doing so, we have
+%
+\begin{eqnarray}
+i S_{wB}^{++}(p) = S_{0} (p) + A_0 (p) n_F(p^0) + S_{B} (p) + A_{B} (p) n_F(p^0) = i S_{0}^{++}(p) + i S_{B}^{++}(p) \nonumber  \\
+i S_{wB}^{+-}(p) = ( A_0(p) + A_{B} (p) ) \left[ n_F(p^0) - \theta(-p^0) \right] = i S_{0}^{+-}(p) + i S_{B}^{+-}(p)  \nonumber  \\
+i S_{wB}^{-+}(p) = ( A_0(p) + A_{B} (p) ) \left[ n_F(p^0) - \theta(p^0) \right] = i S_{0}^{-+}(p) + i S_{B}^{-+}(p) \nonumber  \\
+i S_{wB}^{--}(p) = -S_{0} (p) + A_0 (p) n_F(p^0) - S_{B} (p) + A_{B} (p) n_F(p^0) = i S_{0}^{--}(p) + i S_{B}^{--}(p)
+\end{eqnarray}
+%
+
+\subsection{Evaluating the Damping kernel}
+
+In order to evaluate the damping coefficient, we first evaluate its kernel whose expression is
+%
+\begin{eqnarray}
+ M_{wB}(k) = \int \frac{d^4 p}{(2\pi)^4} \mathrm{tr} \left[ S_{wB}^{<}(k+p) S_{wB}^{>}(p) -
+ S_{wB}^{>}(k+p) S_{wB}^{<}(p) \right] .
+\end{eqnarray}
+%
+Using the expressions for $S_{wB}^{<}(p)$ and $S_{wB}^{>}(p)$, the damping kernel can be decomposed in
+terms up to second order in the weak magnetic field, as written below
+%
+\begin{eqnarray}
+ M_{wB}(k) = M^0(k) + M^{0B}(k) + M^{B0}(k) + M^{B^2}(k)
+\end{eqnarray}
+%
+where the first term is magnetic field independent derived in Ref.~\cite{Nahrgang:2011mg}. The second term, given by
+%
+\begin{eqnarray}
+ M^{0B}(k) = \int \frac{d^4 p}{(2\pi)^4} \mathrm{tr} \left[ S_{0}^{<}(k+p) S_{B}^{>}(p) -
+ S_{B}^{>}(k+p) S_{0}^{<}(p) \right] ,
+\end{eqnarray}
+%
+and the third term, obtained by changing $0\leftrightarrow B$ in the above expression, are of $\mathcal{O}(B)$ order in the
+magnetic field. Another important thing is that such terms are imaginary due to the $i$ factor arising from the
+spectral density $A_{sB}(p)$. But, one can show that these two terms cancel themselves once that $M^{0B}(k) = - M^{B0}(k)$.
+This is consistent with the hermiticity of the damping kernel. Finally, the last term is of $\mathcal{O}(B^2)$ order and it
+is given by the following expression
+%
+\begin{eqnarray}
+ M^{B^2}(k) = \int \frac{d^4 p}{(2\pi)^4} \mathrm{tr} \left[ S_{B}^{<}(k+p) S_{B}^{>}(p) -
+ S_{B}^{>}(k+p) S_{B}^{<}(p) \right] ,
+\end{eqnarray}
+%
+where the above propagators in the Keldysh contour are given by
+%
+\begin{eqnarray}
+S_{B}^{<}(p) &=& -i A_{B} (p) \left[ n_F(p^0) - \theta(-p^0) \right] \nonumber \\
+S_{B}^{>}(p) &=& -i A_{B} (p) \left[ n_F(p^0) - \theta( p^0) \right] .
+\end{eqnarray}
+%
+This way, the damping kernel $M^{B^2}(k)$ becomes
+%
+\begin{eqnarray}
+ M^{B^2}(k) = - \int \frac{d^4 p}{(2\pi)^4} \mathrm{tr} \left[ A_{B} (k+p) A_{B}(p) \right] D(k^0 +p^0 , p^0) ,
+\end{eqnarray}
+%
+where the function $D(k^0 +p^0 , p^0)$ has been defined before. Now, using the expressions for $A_{B}(p)$ functions,
+we can write
+%
+\begin{eqnarray}
+\mathrm{tr} \left[ A_{B} (k+p) A_{B}(p) \right] &=& (2\pi)^2 (eB)^2 \Delta\left(p_0 ,E_p\right)
+\Delta\left(k_0 +p_0 ,E_{p+k} \right) \delta\left(p_0^2 - E_p^2\right) \delta\left((k_0 +p_0)^2 - E_{p+k}^2\right) \nonumber \\
+&\times& \mathrm{tr} \left[ \gamma_1 \gamma_2 \left( \gamma\cdot (p_{\parallel} + k_{\parallel}) + m \right)
+\gamma_1 \gamma_2 \left( \gamma\cdot (p_{\parallel} + m \right) \right] .
+\end{eqnarray}
+%
+Following with the expression for $M^{B^2}(k)$ we obtain
+%
+\begin{eqnarray}
+ M^{B^2}(k) &=& - (eB)^2 \int \frac{d^4 p}{(2\pi)^2} T(p_0 ,p_z ;k_0 ,k_z) D(k^0 +p^0 , p^0)
+ \Delta\left(p_0 ,E_p\right) \Delta\left( k_0 +p_0 ,E_{p +k} \right) \nonumber \\
+ &\times& \delta\left(p_0^2 -E_p^2\right) \delta\left( (k_0 +p_0)^2 -E_{p +k}^2 \right) .
+\end{eqnarray}
+%
+By integrating over the $p^0$ and keeping the relevant terms, we obtain
+%
+\begin{eqnarray}
+ M^{B^2}(k) &=& - (eB)^2 \int \frac{d^3 p}{(2\pi)^2} T(-E_p ,p_z ;k_0 ,k_z) D(k^0 -E_p , -E_p)
+ \Delta\left(-E_p ,E_p\right) \Delta\left( k_0 -E_p ,E_{p +k} \right) \nonumber \\
+ &\times& \delta\left( (k_0 -E_p)^2 -E_{p +k}^2 \right) .
+\end{eqnarray}
+%
+
+
+
+\begin{thebibliography}{99}
+
+%\cite{Fraga:2008qn}
+\bibitem{Fraga:2008qn}
+E.~S.~Fraga and A.~J.~Mizher,
+%``Chiral transition in a strong magnetic background,''
+Phys. Rev. D \textbf{78}, 025016 (2008)
+doi:10.1103/PhysRevD.78.025016
+[arXiv:0804.1452 [hep-ph]].
+%170 citations counted in INSPIRE as of 07 Oct 2020
+
+%\cite{Menezes:2008qt}
+\bibitem{Menezes:2008qt}
+D.~P.~Menezes, M.~Benghi Pinto, S.~S.~Avancini, A.~Perez Martinez and C.~Providencia,
+%``Quark matter under strong magnetic fields in the Nambu-Jona-Lasinio Model,''
+Phys. Rev. C \textbf{79}, 035807 (2009)
+doi:10.1103/PhysRevC.79.035807
+[arXiv:0811.3361 [nucl-th]].
+%201 citations counted in INSPIRE as of 07 Oct 2020
+
+
+%\cite{Nahrgang:2011mg}
+\bibitem{Nahrgang:2011mg}
+  M.~Nahrgang, S.k~Leupold, C.~Herold and M.~Bleicher,
+%  %``Nonequilibrium chiral fluid dynamics including dissipation and noise,''
+  Phys.\ Rev.\ C {\bf 84}, 024912 (2011)
+  doi:10.1103/PhysRevC.84.024912
+  [arXiv:1105.0622 [nucl-th]].
+  %%CITATION = doi:10.1103/PhysRevC.84.024912;%%
+  %77 citations counted in INSPIRE as of 17 Jan 2019
+
+%\cite{Hasan:2017fmf}
+\bibitem{Hasan:2017fmf}
+  M.~Hasan, B.~Chatterjee and B.~K.~Patra,
+  %``Heavy Quark Potential in a static and strong homogeneous magnetic field,''
+  Eur.\ Phys.\ J.\ C {\bf 77}, no. 11, 767 (2017)
+  doi:10.1140/epjc/s10052-017-5346-z
+  [arXiv:1703.10508 [hep-ph]].
+  %%CITATION = doi:10.1140/epjc/s10052-017-5346-z;%%
+  %21 citations counted in INSPIRE as of 06 Jan 2020
+
+
+%\cite{Rezaeian:2005nm}
+\bibitem{Rezaeian:2005nm}
+  A.~H.~Rezaeian and H.~J.~Pirner,
+  %``The Nuclear matter stability in a non-local chiral quark model,''
+  Nucl.\ Phys.\ A {\bf 769}, 35 (2006)
+  doi:10.1016/j.nuclphysa.2006.01.015
+  [nucl-th/0510041].
+  %%CITATION = doi:10.1016/j.nuclphysa.2006.01.015;%%
+  %20 citations counted in INSPIRE as of 04 Feb 2019
+
+%\cite{Berges:2001fi}
+\bibitem{Berges:2001fi}
+  J.~Berges,
+  %``Controlled nonperturbative dynamics of quantum fields out-of-equilibrium,''
+  Nucl.\ Phys.\ A {\bf 699}, 847 (2002)
+  doi:10.1016/S0375-9474(01)01295-7
+  [hep-ph/0105311].
+  %%CITATION = doi:10.1016/S0375-9474(01)01295-7;%%
+  %227 citations counted in INSPIRE as of 04 Feb 2019
+
+%\cite{Fu:2010ej}
+\bibitem{Fu:2010ej}
+  W.~j.~Fu, D.~Huang and F.~b.~Wang,
+  %``Time-dependent Ginzburg-Landau equation in the Nambu-Jona-Lasinio model,''
+  Nucl.\ Phys.\ A {\bf 849}, 203 (2011)
+  doi:10.1016/j.nuclphysa.2010.11.004
+  [arXiv:1005.3636 [hep-ph]].
+  %%CITATION = doi:10.1016/j.nuclphysa.2010.11.004;%%
+  %4 citations counted in INSPIRE as of 05 Feb 2019
+
+
+%\cite{Klevansky:1992qe}
+\bibitem{Klevansky:1992qe}
+  S.~P.~Klevansky,
+  %``The Nambu-Jona-Lasinio model of quantum chromodynamics,''
+  Rev.\ Mod.\ Phys.\  {\bf 64}, 649 (1992).
+  doi:10.1103/RevModPhys.64.649
+  %%CITATION = doi:10.1103/RevModPhys.64.649;%%
+  %1537 citations counted in INSPIRE as of 08 Oct 2019
+\end{thebibliography}
+
+\end{document} 

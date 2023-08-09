@@ -1,0 +1,354 @@
+% FortySecondsCV LaTeX template
+% Copyright © 2019-2020 René Wirnata <rene.wirnata@pandascience.net>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
+%
+% Please visit https://github.com/PandaScience/FortySecondsCV for the most
+% recent version! For bugs or feature requests, please open a new issue on
+% github.
+%
+% Contributors
+% ------------
+% * ifokkema
+% * Bertbk
+% * Hespe
+%
+% Attributions
+% ------------
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo
+%   (cspagnuolo@unisa.it), released under the MIT license and available under
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
+
+
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+	a4paper,
+	% showframes,
+	% vline=2.2em,
+	% maincolor=cvgreen,
+	% sidecolor=gray!50,
+	% sectioncolor=red,
+	% subsectioncolor=orange,
+	% itemtextcolor=black!80,
+	% sidebarwidth=0.4\paperwidth,
+	% topbottommargin=0.03\paperheight,
+	% leftrightmargin=20pt,
+	% profilepicsize=4.5cm,
+	% profilepicborderwidth=3.5pt,
+	% profilepicstyle=profilecircle,
+	% profilepiczoom=1.0,
+	% profilepicxshift=0mm,
+	% profilepicyshift=0mm,
+	% profilepicrounding=1.0cm,
+]{fortysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{fontawesome5}
+
+
+% uncomment in case you don't want any hyphenation
+% \usepackage[none]{hyphenat}
+
+% take care of proper font encoding
+\ifxetexorluatex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+%	\newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+%	\usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+	% default font size is \large, so adjust to harmonize with sidebar layout
+	bubble center node font = \footnotesize,
+	bubble node font = \footnotesize,
+	% default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+	bubble center node size = 0.4\sidebartextwidth,
+	bubble node size = 0.25\sidebartextwidth,
+	distance center/other bubbles = 1.5em,
+	% set center bubble color
+	bubble center node color = maincolor!70,
+	% define the list of colors usable in the diagram
+	set color list = {maincolor!10, maincolor!40,
+	maincolor!20, maincolor!60, maincolor!35},
+	% sets the opacity at which the bubbles are shown
+	bubble fill opacity = 0.8,
+}
+
+
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+%% mandatory information
+% your name
+\cvname{Jonas dos Santos Sousa}
+% job title/career
+\cvjobtitle{Cientista de Dados\\[0.2em]Graduado em Física}
+
+%% optional information
+% profile picture
+\cvprofilepic{pics/cv_photo.jpeg}
+
+% NOTE: ordering in sidebar will mimic the following order
+% date of birth
+\cvbirthday{26 de Junho de 1997}
+% short address/location, use \newline if more than 1 line is required
+\cvaddress{São Luís - Maranhão - Brasil}
+% phone number
+\cvphone{+55 98 99219-4930}
+% personal website
+%\cvsite{https://pandascience.net}
+% email address
+\cvmail{jdss026@gmail.com}
+% any other custom entry
+%\cvcustomdata{\faFlag}{Brasileiro}
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/}}
+
+	% social network accounts incl. proper hyperlinks
+	\profilesection{Redes}
+		\begin{icontable}{2.5em}{1em}
+			\social{\faLinkedin }
+				{https://www.linkedin.com/in/jonasdossantossousa/}
+				{Linkedin Page Link}
+			\social{\faGithub}
+				{https://github.com/Jdss026}
+				{Github Page Link}
+		\end{icontable}
+
+	\profilesection{Idiomas}
+		\pointskill{\flag{BR.png}}{Portugu\^es}{5}
+		%\pointskill{\flag{DE.png}}{German}{3}
+	\pointskill{\flag{GB.png}}{Ingl\^es}{4}
+	%\pointskill{\flag{SP.png}}{Espanhol}{2}
+
+	\profilesection{Certifica\c{c}\~oes}
+
+		\skill{\faGraduationCap}{Power BI Desktop}
+		\skill{\faGraduationCap}{Docker: criando e gerenciando containers}
+		\skill{\faPython}{Python para Data Science}
+		\skill{\faLaptop}{Linux: Conhecendo e Utilizando o Terminal}
+		\skill{\faGraduationCap}{Machine Learning}
+		\skill{\faLaptop}{Introdução ao Git e ao GitHub}
+
+	%\profilesection{Soft Skills}
+	%	\pointskill{\faHome}{Dancing}{4}[4]
+	%		%\skill[1.8em]{\faCompress}{No need to specify further}
+	%	\pointskill{\faChild}{Music}{3}[4]
+			%\skill[1.8em]{\faCompress}{On a tree}
+			%\skill[1.8em]{\faCompress}{In the grass}
+	
+	\profilesection{Minha rotina}
+	\wheelchart{3.7em}{2em}{%
+	20/3em/maincolor!50/Leituras,
+	20/3em/maincolor!15/Diversão,
+	40/4em/maincolor!40/Trabalho,
+	20/3em/maincolor!20/Fam\'ilia
+	}
+}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 2nd PAGE
+%-------------------------------------------------------------------------------
+\addtobacksidebar{
+	%\profilesection{About Me}
+	%\aboutme{ I'm an enthusiastic about how to apply my skills to solve %real problems  and generating insights from complex data. I really %like to be friendly in my workplace in order to make the job a %comfortable moment. In my free time, I really enjoy dancing and %listening musics to relax. 
+	%}
+
+	%\profilesection{A Day of my Life}
+%	\begin{sidebarminipage}
+%		\chartlabel{Bubble}
+%		\chartlabel{Diagrams}
+%		\chartlabel{with}
+%		\chartlabel{proper}
+%		\chartlabel{overflow}
+%		\chartlabel{protection}
+%		\chartlabel{for}
+%		\chartlabel{labels}
+%	\end{sidebarminipage}
+
+%	\begin{figure}\centering
+%		\smartdiagram[bubble diagram]{
+%			\textcolor{white}{\textbf{Being a}} \\
+%			\textcolor{white}{\textbf{Panda}}, % center bubble
+%			\textcolor{black!90}{Eating},
+%			\textcolor{black!90}{Sleeping},
+%			\textcolor{black!90}{Rolling},
+%			\textcolor{black!90}{Playing},
+%			\textcolor{black!90}{Chilling}
+%		}
+%	\end{figure}
+
+	%\chartlabel{Wheel Chart}
+
+	\wheelchart{3.7em}{2em}{%
+	20/3em/maincolor!50/Reading,
+	15/3em/maincolor!15/Dancing,
+	30/4em/maincolor!40/Study,
+	20/3em/maincolor!20/Enjoy Family
+	}
+
+	%\profilesection{Barskills}
+	%\barskill{\faSkyatlas}{Wearing asian rice hats}{60}
+	%\barskill{\faImage}{Playing Chess}{30}
+	%\barskill{\faMusic}{Playing the bamboo flute}{50}
+
+	%\profilesection{Memberships}
+	%\begin{memberships}
+	%	\membership[4em]{pics/logo.png}{PandaScience.net}
+	%	\membership[4em]{pics/logo.png}{Some longer text spanning over %more than
+	%		only one line}
+	%\end{memberships}
+}
+
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
+\begin{document}
+
+\makefrontsidebar
+\vspace{-0.4cm}
+\cvsection{Experi\^encia profissional}
+\begin{cvtable}[1.2]
+    \cvitem{2019-2023}{Graduação em Física}{Universidade Federal do Maranhão - UFMA}{Desenvolvimento de habilidades técnicas e específicas da formação de um físico teórico, com o dia a dia focado na aprendizagem e resolução de problemas de alto nível. Obtive e analisei os dados de experimentos reais utilizando o tratamento estatístico utilizando \textbf{Excel, Numpy e Pandas} para a limpeza e análise dos dados, com a finalidade de apresentação gráfica dos resultados. Realizei estudos sobre a solução de problemas de Astronomia e Astrofísica tais como efeitos de marés, radiação estelar, atmosfera estelar e cálculos orbitais com dados astronômicos com o auxílio das bibliotecas do Python: \textbf{Scikit-learn, Numpy, Pandas, Astropy e Matplotlib}. Realizei pesquisas na área de mecânica quântica sobre o tema de \textbf{Computação e Informação Quântica}, tais como Protocolos de Teletransporte e Codificação Superdensa, além de executar tais protocolos em Hardware real por meio da \textbf{SDK em Python da IBM para circuitos quânticos - Qiskit}. Dentro desta mesma área, realizei pesquisas sobre Fases Topológicas que surgem no contexto de sistemas quânticos onde realizei minha monografia.} 
+    %Também atuo em projeto de migra\c{c}\~ao de dados onde desenvolvi cada pipeline na transforma\c{c}\~ao dos dados.}
+	
+\end{cvtable}
+
+\vspace{0.cm}
+
+\cvsection{Projetos Recentes}
+\begin{cvtable}[1.5]
+	%\cvitem{2022}{Líder de Projeto de recomenda\c{c}\~ao}{}
+	%\cvitem{}{Líder de Projeto de recomenda\c{c}\~ao}{}	{Focus: Atuei no projeto que automatiza e recomenda os melhores produtos para determinados consumidores.}
+		
+	\cvitem{}{Previsão de preço de casas em Merlbourne, AU}{}
+		{Focus: Projeto de Análise Exploratória de Dados; Modelagem via Regressão; Criação de API via Flask, testes via Insomnia; Deploy da API na AWS via Docker; Link Github: \url{https://github.com/Jdss026/MelborneProject}}
+
+        
+    
+        \cvitem{}{Previsor de Risco de AVC}{}
+    		{Focus: Projeto de Análise Exploratória de Dados; Modelagem via Classificação; Criação de API em Flask; Deploy da API na AWS via Docker; Link Github: \url{https://github.com/Jdss026/stroke-classifier}}
+		
+
+\end{cvtable}
+
+%\cvsection{Projetos Recentes}
+%\begin{cvtable}[1.5]
+	%\cvitem{2022}{Líder de Projeto de recomenda\c{c}\~ao}{}
+%	\cvitem{}{Líder de Projeto de recomenda\c{c}\~ao}{}	{Focus: Atuei no projeto que automatiza e recomenda os melhores produtos para determinados consumidores.}
+		
+%	\cvitem{2021}{Líder de Preven\c{c}\~ao de perdas dentro de uma cadeia log\'istica}{}
+%		{Focus: Eu fiz uso das principais t\'ecnicas para fazer predi\c{c}\~oes de encomendas que tem alto risco de perdas.}
+		
+%	\cvitem{2021}{Líder do Projeto de Identifica\c{c}\~ao dos melhores motoristas}{}
+%		{Focus: A fim de identificar os melhores motoristas para que possam transportar certas encomendas, eu desenvolvi um processo que aprende com o perfil do histórico de motoristas e escolhe uma lista de motoristas que vão atender a demanda.}
+		
+%	 \cvitem{2020}{Líder do Projeto de Classifica\c{c}\~ao de E-mails}{}
+%		{Focus: Usando t\'ecnicas de NLP, eu desenvolvi um processo que classifica um conjunto de e-mails a fim de identificar quais e-mails cont\'em algum risco em seu conte\'udo.}
+
+%\end{cvtable}
+
+\vspace{-0.1cm}
+
+\cvsection{Habilidades}
+%\begin{cvtable}[1.5]
+\begin{itemize}
+  \item  Experi\^encia em Python e suas bibliotecas de dados: Numpy, Pandas, Scikit-Learn e Matplotlib.
+
+  \item Experiência em ambiente GNU/Linux e comandos Bash. Dom\'inio em versionamento de c\'odigo: GitHub, GitLab.
+
+ \item Experiência com Docker (Containers)
+ 
+ \item Conhecimento nos principais ambientes de nuvens: AWS (EC2, S3) e GCP (Compute Engine, Cloud Storage, BigQuery).
+
+ \item Experiência em ferramentas de visualização e manipulação de dados: Power BI, Excel.
+
+ \item  Experi\^encia em modelagem estat\'istica dos dados, an\'alise explorat\'oria dos dados. Experi\^encia em t\'ecnicas de an\'alises descritivas, preditivas e prescritivas. %e defini\c{c}\~ao de m\'etricas.
+ 
+ %\item Dom\'inio s\'olido em ferramentas de visualiza\c{c}\~ao 
+ %de dados: Power BI, Tableau, Qlikview.
+  
+  \item Experi\^encia em constru\c{c}\~ao de modelos de machine learning: modelos de Classifica\c{c}\~ao, Clusterização e Regress\~ao.
+  
+  %\item  Experi\^encia no uso de modelos de Deep learning: Keras and Tensor-Flow.
+  
+
+  \item Conhecimento em ferramentas de ETL e em armazenamento de dados.
+ 
+ \end{itemize}
+
+
+% \cvsection{Algumas Recentes Publica\c{c}\~oes}
+% \begin{cvtable}[1.2]
+%     \cvpubitem{Nonequilibrium Dynamics of the Chiral Quark Condensate under a Strong Magnetic Field}{10.3390/sym13040551}{}{2021}
+%     \cvpubitem{A dimension five Lorentz-violating nonminimal coupling for mesons in the KLZ model}{Nucl.Phys.B 945 (2019) 114677}{}{2019}
+%    \cvpubitem{Strong couplings and form factors of charmed mesons in holographic QCD}{Phys.Rev.D 96 (2017) 1, 014017}{}{2017}
+	%\cvpubitem{Inverse Magnetic Catalysis in Bottom-Up Holographic}{Phys.Rev. D94 (2016) no.7,074034}{}{2016}
+	%\cvpubitem{Decay constants of the pion and its excitations in holographic %QCD}{Phys.Rev. D91 (2015) 065024}{}{2015}
+	%\cvpubitem{Magnetic flux inversion in Charged BPS vortices in a Lorentz-violating %Maxwell-Higgs framework}{Phys.Lett. B718 (2012) 620-624}{}{2012}
+
+%\end{cvtable}
+
+%\cvsection{Awards}
+%\begin{cvtable}
+%	\cvitem{2010 -- now}{Panda of the Year}{Panda World Forum}{}
+%	\cvitem{2005 -- now}{Face of World Wide Fund for Nature}{WWF}{}
+%	\cvitem{2000}{Winner of Bamboo Sprouts Eating Contest}{Bamboo %Society}{}
+%\end{cvtable}
+
+
+%\cvsection{Extra-Curricular Activities}
+%\begin{cvtable}
+%	\cvitemshort{Relaxing}{Master the fine art of relaxing everywhere}
+%	\cvitemshort{Music}{Playing the bamboo flute in the 1st Panda %Orchestra}
+%	\cvitemshort{Education}{Teaching young pandas to be more panda-like}
+%\end{cvtable}
+
+\vspace{-0.5cm}
+
+\cvsection{Um pouco mais sobre mim}
+%\aboutme{Minha trajetória acadêmica como físico me proporcionou habilidades e conhecimentos fundamentais que me permitem extrair informações valiosas de grandes conjuntos de dados e transformá-las em soluções práticas para os problemas empresariais mais desafiadores. Possuo uma vasta experiência em lidar com dados complexos, além de habilidades técnicas em programação e análise de dados. Essa combinação me permite obter e tratar dados de diversas fontes, identificando padrões e relações que muitas vezes passam despercebidos. Como resultado, sou capaz de fornecer informações valiosas e insights que podem ser usados para tomar decisões importantes. Sou uma pessoa organizada, com excelentes habilidades de liderança e trabalho em equipe, capaz de colaborar com colegas de trabalho para encontrar soluções de alta qualidade para problemas complexos. Além disso, minha paixão por aprender e explorar novas tecnologias e métodos me permite manter-me atualizado com as últimas tendências no campo da ciência de dados. Por fim, possuo um senso de equilíbrio entre minha vida pessoal e profissional. Sou capaz de manter o foco em meus objetivos profissionais, enquanto ainda dedico tempo e energia para minha vida pessoal e hobbies. Isso me permite ter um melhor equilíbrio entre trabalho e vida pessoal e me torna um candidato ideal para trabalhar em um ambiente dinâmico e exigente.} 
+
+\aboutme{Minha formação em física me permite extrair insights de dados para solucionar problemas empresariais e compreender as regras de negócio subjacentes. Possuo habilidades técnicas em programação e análise de dados, sendo capaz de realizar análises exploratórias detalhadas. Tenho excelentes habilidades de colaboração em equipe, comunico de forma eficaz e trabalho com meus colegas de trabalho para entregar soluções de alta qualidade. Estou sempre atualizado com as últimas tendências em ciência de dados e sou capaz de me adaptar facilmente a um ambiente desafiador e em constante mudança. Como candidato ideal para um ambiente dinâmico e exigente, estou comprometido com a excelência e a entrega de resultados de alto impacto.}
+
+
+%I also have my hobbies, which basically includes dancing, %reading some books and, most important, enjoying my family. }
+
+%\cvsection{Motivation for application}
+%\aboutme{I am very excited to apply for this position as a junior candidate. The %opportunity of putting my skills in practice by solving problems involving %hydrodynamics is very motivating for me. And, I am sure that I will have the chance %of expanding my skills much more.}
+
+%\newpage
+
+%\makebacksidebar
+% \newgeometry{
+% 	top=\topbottommargin,
+% 	bottom=\topbottommargin,
+% 	right=\leftrightmargin,
+% 	left=\leftrightmargin
+% }
+
+
+%\cvsignature
+
+\end{document}
